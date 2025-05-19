@@ -1,0 +1,15 @@
+# Node modules
+client/todo/node_modules/
+server/node_modules/
+
+# Build output
+client/todo/build/
+server/dist/
+
+# Environment files
+client/todo/.env
+server/.env
+
+# Logs and OS files
+*.log
+.DS_Store
