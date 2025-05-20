@@ -10,7 +10,7 @@ const Task = require("./Models/task.js");
 const bodyParser = require('body-parser');
 
 const corsOptions = {
-    origin:["http://localhost:5173"],
+    origin:["http://localhost:5173", "https://todo-project-1-t43u.onrender.com/"],
 };
 
 app.use(cors(corsOptions));
