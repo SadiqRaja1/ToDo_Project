@@ -9,7 +9,7 @@ export default function New (taskAdded) {
         e.preventDefault();
 
         try{
-            const res = await axios.post("http://localhost:8080/tasks", {
+            const res = await axios.post(`${import.meta.env.VITE_Api_URL}tasks`, {
             task :task,
             })
             setTask("");

@@ -6,15 +6,15 @@ import New from "../Form/New.jsx"
 
 export default function Show() {
       const [allTasks, setAllTasks] = useState([]);
-    
+
       const fetchApi = async () => {
-        const response = await axios.get("http://localhost:8080/tasks");
+        const response = await axios.get(`${import.meta.env.VITE_Api_URL}tasks`);
         setAllTasks(response.data);
       };
 
       const handleDelete = async (taskId) => {
         try {
-          await axios.delete(`http://localhost:8080/tasks/${taskId}`);
+          await axios.delete(`${import.meta.env.VITE_Api_URL}${taskId}`);
           fetchApi();
         }catch(err) {
           console.error("Error in deleting", err);
@@ -29,7 +29,7 @@ export default function Show() {
           a=true;
         }
         try {
-          await axios.patch(`http://localhost:8080/tasks/${taskId}`, {underline : a});
+          await axios.patch(`${import.meta.env.VITE_Api_URL}${taskId}`, {underline : a});
           fetchApi();
         } catch (err) {
           console.error("Some Error occured", error);

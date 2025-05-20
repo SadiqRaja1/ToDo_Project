@@ -42,7 +42,7 @@ app.get("/tasks/:id", async(req, res) => {
     const id = req.params.id;
     try {
         const data = await Task.findById(id);
-        res.send(data);
+        res.json(data);
     }catch(err) {
         res.status(500).json({message : "Some error occured"})
     }  
