@@ -35,7 +35,6 @@ export default function Show() {
           console.error("Some Error occured", error);
         }
       }
-
       useEffect(() => {
         fetchApi();
       }, []); 
