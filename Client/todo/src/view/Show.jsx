@@ -14,7 +14,7 @@ export default function Show() {
 
       const handleDelete = async (taskId) => {
         try {
-          await axios.delete(`${import.meta.env.VITE_Api_URL}${taskId}`);
+          await axios.delete(`${import.meta.env.VITE_Api_URL}tasks/${taskId}`);
           fetchApi();
         }catch(err) {
           console.error("Error in deleting", err);
@@ -29,7 +29,7 @@ export default function Show() {
           a=true;
         }
         try {
-          await axios.patch(`${import.meta.env.VITE_Api_URL}${taskId}`, {underline : a});
+          await axios.patch(`${import.meta.env.VITE_Api_URL}tasks/${taskId}`, {underline : a});
           fetchApi();
         } catch (err) {
           console.error("Some Error occured", error);

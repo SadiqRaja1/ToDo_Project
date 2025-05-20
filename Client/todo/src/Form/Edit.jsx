@@ -9,14 +9,14 @@ const Edit = () => {
     const [taskData, setTaskData] = useState("");
 
     const fetchData = async()=> {
-        const data = await axios.get(`${import.meta.env.VITE_Api_URL}${id}`);
+        const data = await axios.get(`${import.meta.env.VITE_Api_URL}tasks/${id}`);
         setTaskData(data.data.task);
     }
 
     const handleSubmit = async(e)=> {
         e.preventDefault();
         try{
-            const res = await axios.put(`${import.meta.env.VITE_Api_URL}${id}`, {task: taskData});
+            const res = await axios.put(`${import.meta.env.VITE_Api_URL}tasks/${id}`, {task: taskData});
             navigate("/");
         }catch(err) {
             console.error("Some Error occured", err);
