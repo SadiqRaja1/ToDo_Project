@@ -1,4 +1,4 @@
-# My Full-Stact Todo App
+# My Full-Stack Todo App
 A full-stack application with a React frontend and Node.js backend. Users can manage tasks.
 
 ## Project Structure
